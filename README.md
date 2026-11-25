@@ -1,5 +1,10 @@
 # 현장안전포털
 
+## 🚀 프로그램 바로 실행
+**[👉 현장안전포털 열기 (클릭)](https://htmlpreview.github.io/?https://raw.githubusercontent.com/otk4406/safety/main/index.html)**
+
+> GitHub Pages를 활성화한 뒤에는 [공식 웹사이트 주소](https://otk4406.github.io/safety/)로 접속할 수 있습니다.
+
 현장 안전관리 업무를 위한 웹 기반 포털입니다.
 
 ## 주요 기능
@@ -11,10 +16,10 @@
 - 국가법령정보센터 검색 및 키워드 기반 안전 도우미
 
 ## 실행
-저장소의 `index.html`을 열거나 GitHub Pages를 활성화해 웹사이트로 사용할 수 있습니다.
+위의 **현장안전포털 열기** 링크를 클릭하면 브라우저에서 프로그램을 미리 볼 수 있습니다. 또는 저장소의 `index.html`을 내려받아 Chrome/Edge에서 열 수 있습니다.
 
 ## GitHub Pages
-저장소의 **Settings → Pages**에서 **Deploy from a branch**, 브랜치 `main`, 폴더 `/ (root)`를 선택하고 저장하세요.
+저장소의 **Settings → Pages**에서 **Deploy from a branch**, 브랜치 `main`, 폴더 `/ (root)`를 선택하고 저장하세요. 배포가 완료되면 `https://otk4406.github.io/safety/`에서 사용할 수 있습니다.
 
 ## 데이터와 보안 안내
 점검 기록과 일정은 현재 사용 중인 브라우저의 localStorage에 저장됩니다. 다른 PC나 직원 간 자동 동기화는 제공하지 않습니다. 여러 사용자 공유에는 서버와 데이터베이스가 필요합니다. 안전 도우미는 키워드 기반 기초 안내이며 법적 판단을 대신하지 않습니다. 저장소가 공개 상태이면 누구나 소스 코드를 볼 수 있으므로 개인정보·현장 기밀·API 키를 올리지 마세요.
