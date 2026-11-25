@@ -39,8 +39,9 @@
 </div><p class="muted">인쇄 설정에서 A4 또는 라벨지 규격과 배율을 조정하세요. GHS 그림문자는 실제 법정 픽토그램 도안이 필요한 경우 MSDS/공식 원본을 사용하세요.</p></div>
 </div></section>
 </main></div><script>
-const $=s=>document.querySelector(s),KEY='safety-records-v2',EKEY='safety-events-v2';let records=JSON.parse(localStorage.getItem(KEY)||'[]'),events=JSON.parse(localStorage.getItem(EKEY)||'[]'),cal=new Date(),selected=new Date().toISOString().slice(0,10);
-const save=()=>localStorage.setItem(KEY,JSON.stringify(records)),saveE=()=>localStorage.setItem(EKEY,JSON.stringify(events)),iso=d=>d.toISOString().slice(0,10),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+const $=s=>document.querySelector(s),KEY='safety-records-v2',EKEY='safety-events-v2';let records=JSON.parse(localStorage.getItem(KEY)||'[]'),events=JSON.parse(localStorage.getItem(EKEY)||'[]'),cal=new Date(),selected='';
+const save=()=>localStorage.setItem(KEY,JSON.stringify(records)),saveE=()=>localStorage.setItem(EKEY,JSON.stringify(events)),iso=d=>d.getFullYear()+'-'+String(d.getMonth()+1).padStart(2,'0')+'-'+String(d.getDate()).padStart(2,'0'),esc=s=>String(s??'').replace(/[&<>"']/g,c=>({'&':'&amp;','<':'&lt;','>':'&gt;','"':'&quot;',"'":'&#39;'}[c]));
+selected=iso(new Date());
 $('#today').textContent=new Intl.DateTimeFormat('ko-KR',{dateStyle:'full'}).format(new Date());
 document.querySelector('#quickInspect').onclick=()=>{document.querySelector('.nav[data-v=inspect]').click();document.querySelector('#inspectionForm').scrollIntoView({behavior:'smooth',block:'start'});};
 document.querySelectorAll('.nav').forEach(b=>b.onclick=()=>{document.querySelectorAll('.nav').forEach(x=>x.classList.toggle('active',x===b));document.querySelectorAll('.view').forEach(x=>x.classList.toggle('active',x.id===b.dataset.v));$('#heading').textContent=b.textContent.trim()});
