@@ -96,8 +96,6 @@ $('#dashAlertCount').textContent=alerts.length+'건';
 $('#dashAlerts').innerHTML=alerts.length?alerts.map(a=>'<div class="dash-alert '+(a.kind==='warning'?'warning':'')+'"><i class="alert-dot"></i><div class="alert-copy"><b>'+esc(a.title)+'</b><small>'+esc(a.detail)+'</small></div><button type="button" data-alert-go="inspect">확인</button></div>').join(''):'<div class="dash-empty">현재 표시할 안전관리 알림이 없습니다.</div>';
 $('#dashAlerts').querySelectorAll('[data-alert-go]').forEach(b=>b.onclick=()=>document.querySelector('.nav[data-v=inspect]').click());
 }
-
-}
 function changeRecordStatus(id,status){const r=records.find(x=>x.id===id);if(r){r.status=status;r.updatedAt=new Date().toISOString();if(status==='done')r.completedAt=new Date().toISOString();save();render()}}
 function openRecordPhoto(id,side){const r=records.find(x=>x.id===id),src=r&&(side==='before'?r.photoBefore:r.photoAfter);if(src){const w=window.open();if(w)w.document.write('<img src="'+src+'" style="max-width:100%;height:auto">');else alert('사진을 열려면 팝업을 허용해 주세요.')}}
 function delRecord(id){if(confirm('점검 기록을 삭제할까요?')){records=records.filter(x=>x.id!==id);save();render()}}
